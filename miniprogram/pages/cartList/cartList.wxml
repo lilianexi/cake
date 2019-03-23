@@ -1,0 +1,28 @@
+<view class="container">
+  <view class="top">
+    <image src="../../images/buy_car.png"></image>
+    <text>购物车</text>
+  </view>
+  <view >
+    <view class="content" wx:for="{{cartList}}" wx:key="index">
+      <checkbox checked="{{item.checked}}"bindtap="select"data-index="{{index}}"></checkbox>
+      <image src="{{item.url}}"></image>
+      <text class="title">{{item.title}}</text>
+      <view class="btn">
+          <button size="mini" plain='true'bindtap="add"data-index="{{index}}">+</button>
+          <input type="text"maxlength="2"value="{{item.count}}"bindinput="getValue"></input>
+          <button size="mini"plain='true' bindtap="les"data-index="{{index}}">-</button>
+      </view>
+      <text>￥{{item.price}}</text>
+      <text bindtap="deleteList" data-index="{{index}}">删除</text>
+    </view>
+  </view>
+  <view class="bottom">
+    <checkbox checked="{{selected}}"bindtap="selectAll"data-index="{{index}}"></checkbox>
+    <text>全选</text>
+    <!-- 总价 -->
+    <text>￥{{totalPrice}}</text>
+    <button>结算</button>
+</view>
+</view>
+

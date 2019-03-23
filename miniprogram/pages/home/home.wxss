@@ -1,0 +1,37 @@
+/* miniprogram/pages/home/home.wxss */
+.slider,.slider swiper,.slider image{
+  height:200rpx;
+  width:100%;
+}
+/* 导航 */
+.nav{
+ text-align: center;
+ font-size: 14px
+}
+.nav text{
+  display: block
+}
+.nav image{
+  width:20%;
+  height:50rpx;
+}
+/* 内容部分 */
+.index-nav{
+  display: flex;
+  flex-wrap: wrap;
+}
+.nav-item{
+  width:32%;      /*商品元素 30%*/
+  height:200rpx;        /*商品元素高度 200rpx*/
+  box-sizing: border-box;
+  display: flex;        /*父元素*/
+  flex-direction: column;
+  justify-content: center; /*水平居中垂直居中*/
+  align-items: center;
+  font-size:10px;
+  /*边框 右侧 底部*/
+  margin:2px
+}
+.nav-item image{
+  width:100%
+}

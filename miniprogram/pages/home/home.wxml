@@ -1,0 +1,36 @@
+<view class="container">
+  <!-- 轮播图 -->
+  <view class="slider">
+    <swiper autoplay>
+      <swiper-item wx:for="{{list}}" wx:key="index">
+        <image src="{{item.url}}" lazy-load mode="aspectFill"></image>
+      </swiper-item>
+    </swiper>
+  </view>
+  <!-- 导航部分 -->
+  <view class="nav">
+    <image src='../../images/tc_title.png'></image>
+    <text>蛋糕</text>
+  </view>
+  <!-- cake部分 -->
+  <view class="index-nav">
+     <view class="nav-item" wx:for="{{cake}}" wx:key="index" >
+        <image src="{{item.url}}" data-id="{{item._id}}" bindtap="handleJump"></image>
+        <text>{{item.title_en}}</text>
+        <text>{{item.title}}</text>
+     </view>
+  </view>
+  <!-- 导航部分 -->
+  <view class="nav">
+    <image src='../../images/tp_title1.png'></image>
+    <text>小食</text>
+  </view>
+  <!--  -->
+   <view class="index-nav">
+     <view class="nav-item" wx:for="{{epic}}" wx:key="index">
+        <image src="{{item.url}}" data-id="{{item.id}}" bindtap="handleJump"></image>
+        <text>{{item.title_en}}</text>
+        <text>{{item.title}}</text>
+     </view>
+  </view>
+</view>

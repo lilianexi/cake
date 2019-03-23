@@ -1,0 +1,27 @@
+<view class="container">
+  <view class="content" wx:for="{{detail}}" wx:key="index">
+    <image src="{{item.url}}"></image>
+    <text>{{item.details_en}}</text>
+    <text>{{item.details}}</text>
+    <text class="title">{{item.title}}</text>
+    <text class="price">￥{{item.price[i]}}</text>
+    <view class="weight" >
+      <text bindtap='changeone'style="background:url('{{imgUrl}}') no-repeat">1磅</text>
+      <text bindtap='changetwo' style="background:url('{{imgUrl1}}') no-repeat">2磅</text>
+      <text bindtap='changethree' style="background:url('{{imgUrl2}}') no-repeat">3磅</text>
+    </view>
+    <view class="btn">
+      <text>数量</text>
+      <view>
+        <button size="mini" plain='true'bindtap="add">+</button>
+        <input type="text"maxlength="2"value="{{count}}"bindinput="getValue">1</input>
+        <button size="mini"plain='true' bindtap="les">-</button>
+      </view>
+    </view>
+  </view>
+  <view class="toBuy">
+    <button type="warn" bindtap="addCart" data-id="{{item._id}}">加入购物车</button>
+    <button type="warn">立即订购</button>
+  </view>
+  
+</view>

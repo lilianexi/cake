@@ -1,0 +1,43 @@
+{
+  "pages": [
+      "pages/cartList/cartList",
+    "pages/home/home",
+    "pages/index/index",
+    "pages/databaseGuide/databaseGuide",
+    "pages/addFunction/addFunction",
+    "pages/details/details"
+  
+  ],
+  "window": {
+    "backgroundColor": "#fff",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "巴黎恋人",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "borderStyle": "black",
+    "color": "black",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "pages/tabs/home.png",
+        "selectedIconPath": "pages/tabs/home-active.png"
+      },
+      {
+        "pagePath": "pages/home/home",
+        "text": "消息",
+        "iconPath": "pages/tabs/message.png",
+        "selectedIconPath": "pages/tabs/message-active.png"
+      },
+      {
+        "pagePath": "pages/cartList/cartList",
+        "text": "购物车",
+        "iconPath": "pages/tabs/cart (2).png",
+        "selectedIconPath": "pages/tabs/cart-active.png"
+      }
+    ]
+  }
+}
