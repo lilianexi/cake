@@ -1,12 +1,14 @@
 {
   "pages": [
-      "pages/cartList/cartList",
     "pages/home/home",
     "pages/index/index",
     "pages/databaseGuide/databaseGuide",
     "pages/addFunction/addFunction",
-    "pages/details/details"
-  
+    "pages/cartList/cartList",
+    "pages/order/order",
+    "pages/details/details",
+    "pages/adress/adress"
+   
   ],
   "window": {
     "backgroundColor": "#fff",

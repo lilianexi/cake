@@ -42,7 +42,6 @@ Page({
   add: function (e) {
     var index = e.currentTarget.dataset.index
     var cartList=this.data.cartList;
-    console.log(cartList)
     //购物车数量
     var nowCount = cartList[index].count
     nowCount++;
@@ -69,10 +68,8 @@ Page({
   },
   //删除
   deleteList:function(e) {
-    console.log(1)
     var index=e.currentTarget.dataset.index;
     let cartList=this.data.cartList;
-    console.log(cartList)
     cartList.splice(index,1)
     this.setData({
       cartList:cartList
@@ -81,19 +78,25 @@ Page({
   },
   //总价
   getTotalPrice:function() {
-    let cartList = this.data.cartList;  
-    console.log(cartList)            // 获取购物车列表
+    let cartList = this.data.cartList;          // 获取购物车列表
     let total = 0;
     for (let i = 0; i < cartList.length; i++) {         
       if (cartList[i].checked==true) {                  
         total += cartList[i].count * cartList[i].price;    
       }
-      console.log(total)
     }
     this.setData({                          
       cartList: cartList,
       totalPrice: total.toFixed(2)
     });
+  },
+  //跳转支付页面
+  pay:function(e){
+    wx.navigateTo({
+      url: '../order/order',
+    })
+
+    
   },
 
   /**
@@ -102,13 +105,14 @@ Page({
 
   onLoad: function (options) {
     // console.log(123)
+    
   
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+   
   },
 
   /**
@@ -119,21 +123,21 @@ Page({
       key: 'key',
       success: (res) => {
         var list = this.data.cartList;
-        for(var i=0;i<list.length;i++){
-          if(list[i]._id==res.data._id){
-            list[i].count = list[i].count+1;
-          }else{
-            list.push(res.data)
+        if (list.length > 0) {
+          for (var i = 0; i < list.length; i++) {
+            if (list[i]._id == res.data._id) {
+              list[i].count = list[i].count + 1;
+            } else {
+              list.push(res.data)
+            }
           }
-        }
-          list.push(res.data)
+        } else { list.push(res.data) }
         this.setData({
           cartList: list
         })
 
       }
     })
-
   },
 
   /**

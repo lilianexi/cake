@@ -23,13 +23,11 @@ Page({
     var price=this.data.price;
     var i=this.data.i
     price=nowCart.price[i]
-    console.log(price)
     nowCart.price=price
    wx.setStorage({
       key: 'key',
      data: nowCart,
       success:(res)=>{
-        console.log(res)
         wx.showToast({
           title: '添加成功',
           icon: "success",
